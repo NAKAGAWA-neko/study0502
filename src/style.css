@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* PC、スマホ共通スタイル */
 body {
   font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial,
