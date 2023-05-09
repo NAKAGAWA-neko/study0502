@@ -1,0 +1,184 @@
+/* PC、スマホ共通スタイル */
+body {
+  font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial,
+    sans-serif;
+}
+
+p {
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+/* PC用 */
+/* 横幅 */
+body {
+  max-width: 1080px;
+  min-width: 960px;
+  margin: 0 auto 0 auto;
+}
+
+/* ヘッダー */
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ナビ */
+.nav-pc {
+  text-align: right;
+  size: 14px;
+  font-weight: bold;
+  padding-top: 15px;
+
+  a {
+    margin-left: 20px;
+
+    &:link {
+      color: #0d0d0d;
+    }
+
+    &:visited {
+      color: #0d0d0d;
+    }
+
+    &:hover {
+      color: #2710d5;
+    }
+
+    &:active {
+      color: #2710d5;
+    }
+  }
+}
+
+// メインビジュアル
+.main-visual {
+  position: relative; //本来の表示位置を基準にした相対位置
+  height: 400px;
+}
+
+.main-message {
+  position: absolute; //親要素を基準にした絶対位置（main-visualが親）
+  top: 0;
+  left: 0; //top,leftが0で親要素の左上に配置
+  background-color: #2710d5;
+  color: white;
+  border-radius: 30px 30px 476px 30px; //角丸
+  max-width: 620px;
+  height: 100%; //main-visualで指定してる400px
+  width: 100%; //
+  z-index: 11; //レイヤーの重ね順
+
+  p {
+    font-size: 28px;
+    margin: 0 0 0 50px;
+  }
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: bold;
+  margin: 100px 0 0 50px;
+}
+h2 {
+  margin-top: 40px;
+  &::after {
+    content: url("images/line.png");
+    margin-left: 10px;
+  }
+}
+h3 {
+  font-size: 27px;
+}
+
+.main-img {
+  max-width: 620px;
+  border-radius: 476px 30px 30px 30px; //親要素を基準にした絶対位置（main-visualが親）
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+.mission {
+  margin: 80px auto 80px auto;
+  width: 100%;
+}
+.mission-flex {
+  width: 100%;
+  display: flex;
+}
+.mission-left {
+  width: 50%;
+  margin: 20px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.mission-right {
+  width: 50%;
+  margin: 20px;
+}
+.s2dgs {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.product {
+  background-color: #fafafa;
+  width: 100%;
+  margin: 80px 0;
+  padding: 10px 40px 0 40px;
+}
+.product-main {
+  margin-top: 40px;
+  display: flex;
+}
+
+.product-left {
+  width: 50%;
+  margin-right: 20px;
+}
+.product-right {
+  width: 50%;
+  margin: 80px 0 0 20px;
+}
+
+.product-left-mantoman,
+.product-left-career {
+  position: relative;
+  height: 480px;
+  margin-right: 20px;
+}
+
+.product-right-media,
+.product-right-b2b {
+  position: relative;
+  height: 480px;
+  margin-left: 20px;
+}
+
+.product-photo {
+  width: 100%;
+}
+
+.product-explain {
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 280px;
+  margin: 0 40px;
+  padding: 20px;
+  box-shadow: ;
+}
