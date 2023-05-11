@@ -1,7 +1,8 @@
 @charset "UTF-8";
 /* PC、スマホ共通スタイル */
 body {
-  font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
+  font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial,
+    sans-serif;
 }
 
 p {
@@ -181,4 +182,4 @@ h3 {
   left: 280px;
   margin: 0 40px;
   padding: 20px;
-}/*# sourceMappingURL=style2.css.map */
+} /*# sourceMappingURL=style2.css.map */
