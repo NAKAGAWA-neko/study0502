@@ -1,183 +1,1236 @@
 /* PC、スマホ共通スタイル */
 body {
-  font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial,
-    sans-serif;
+  font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
 }
 
-p {
-  font-size: 15px;
-}
-
-a {
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-h1 {
-  font-size: 20px;
-  font-weight: bold;
-}
 /* PC用 */
-/* 横幅 */
-body {
-  max-width: 1080px;
-  min-width: 960px;
-  margin: 0 auto 0 auto;
-}
+@media screen and (min-width: 768px) {
+  /* 横幅 */
+  body {
+    max-width: 1080px;
+    min-width: 960px;
+    margin: 0 auto 0 auto;
+  }
 
-/* ヘッダー */
-header {
-  display: flex;
-  justify-content: space-between;
-}
+  /* ヘッダー */
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
 
-/* ナビ */
-.nav-pc {
-  text-align: right;
-  size: 14px;
-  font-weight: bold;
-  padding-top: 15px;
+  /* ナビ */
+  .nav-pc {
+    text-align: right;
+    size: 14px;
+    font-weight: bold;
+    padding-top: 15px;
 
-  a {
-    margin-left: 20px;
+    a {
+      margin-left: 20px;
+      text-decoration: none;
 
-    &:link {
-      color: #0d0d0d;
-    }
+      &:link {
+        color: #0d0d0d;
+      }
 
-    &:visited {
-      color: #0d0d0d;
-    }
+      &:visited {
+        color: #0d0d0d;
+      }
 
-    &:hover {
-      color: #2710d5;
-    }
+      &:hover {
+        color: #2710d5;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
 
-    &:active {
-      color: #2710d5;
+      &:active {
+        color: #2710d5;
+      }
     }
   }
-}
 
-// メインビジュアル
-.main-visual {
-  position: relative; //本来の表示位置を基準にした相対位置
-  height: 400px;
-}
-
-.main-message {
-  position: absolute; //親要素を基準にした絶対位置（main-visualが親）
-  top: 0;
-  left: 0; //top,leftが0で親要素の左上に配置
-  background-color: #2710d5;
-  color: white;
-  border-radius: 30px 30px 476px 30px; //角丸
-  max-width: 620px;
-  height: 100%; //main-visualで指定してる400px
-  width: 100%; //
-  z-index: 11; //レイヤーの重ね順
-
-  p {
-    font-size: 28px;
-    margin: 0 0 0 50px;
+  #nav-sp,
+  .menu-sp {
+    display: none;
   }
-}
 
-h1 {
-  font-size: 60px;
-  font-weight: bold;
-  margin: 100px 0 0 50px;
-}
-h2 {
-  margin-top: 40px;
-  &::after {
+  // メインビジュアル
+  .main-visual {
+    position: relative; //本来の表示位置を基準にした相対位置
+    height: 400px;
+  }
+
+  .main-message {
+    position: absolute; //親要素を基準にした絶対位置（main-visualが親）
+    top: 0;
+    left: 0; //top,leftが0で親要素の左上に配置
+    background-color: #2710d5;
+    color: white;
+    border-radius: 30px 30px 476px 30px; //角丸
+    max-width: 620px;
+    height: 100%; //main-visualで指定してる400px
+    width: 100%; //
+    z-index: 11; //レイヤーの重ね順
+
+    p {
+      font-size: 28px;
+      margin: 0 0 0 50px;
+    }
+
+    h1 {
+      font-size: 60px;
+      font-weight: bold;
+      margin: 100px 0 0 50px;
+    }
+  }
+
+  h2 {
+    margin-top: 40px;
+  }
+
+  h2::after {
     content: url("images/line.png");
     margin-left: 10px;
   }
-}
-h3 {
-  font-size: 27px;
-}
 
-.main-img {
-  max-width: 620px;
-  border-radius: 476px 30px 30px 30px; //親要素を基準にした絶対位置（main-visualが親）
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 10;
-}
-.mission {
-  margin: 80px auto 80px auto;
-  width: 100%;
-}
-.mission-flex {
-  width: 100%;
-  display: flex;
-}
-.mission-left {
-  width: 50%;
-  margin: 20px;
+  h3 {
+    font-size: 27px;
+  }
 
-  img {
+  .main-img {
+    max-width: 620px;
+    border-radius: 476px 30px 30px 30px; //親要素を基準にした絶対位置（main-visualが親）
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+  }
+  #mission {
+    margin: 80px auto 80px auto;
     width: 100%;
+  }
+  .mission-flex {
+    width: 100%;
+    display: flex;
+  }
+  .mission-left {
+    width: 50%;
+    margin: 20px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .mission-right {
+    width: 50%;
+    margin: 20px;
+  }
+  .s2dgs {
+    margin-top: 50px;
+    width: 100%;
+  }
+
+  #product {
+    background-color: #fafafa;
+    width: 100%;
+    margin: 80px 0;
+    padding: 10px 40px 0 40px;
+  }
+  .product-main {
+    margin-top: 40px;
+    display: flex;
+  }
+
+  .product-left {
+    width: 50%;
+    margin-right: 20px;
+  }
+  .product-right {
+    width: 50%;
+    margin: 80px 0 0 20px;
+  }
+
+  .product-left-element {
+    position: relative;
+    height: 480px;
+    margin-right: 20px;
+  }
+
+  .product-right-element {
+    position: relative;
+    height: 480px;
+    margin-left: 20px;
+  }
+
+  .product-photo {
+    width: 100%;
+  }
+
+  .product-explain {
+    background-color: white;
+    position: absolute;
+    top: 280px;
+    left: 0;
+    margin: 0 40px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+
+    /* 説明文の英語 */
+    span {
+      color: #2710d5;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 0;
+    }
+
+    /* 説明文の見出し */
+    h3 {
+      font-size: 20px;
+      margin: 5px 0;
+    }
+
+    /* 説明文 */
+    p {
+      font-size: 14px;
+      margin: 0;
+    }
+  }
+
+  /* 「もっとみる」ボタン */
+  .product-more {
+    display: flex;
+    justify-content: center;
+
+    > img {
+      margin: 0 auto -42px auto;
+    }
+  }
+
+  /* ABOUT US */
+  #aboutus {
+    margin: 80px auto;
+  }
+
+  /* 3つの組織文化と画像を入れる枠 */
+  .culture-main {
+    display: flex;
+
+    table {
+      max-width: 500px;
+      margin-right: 50px;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  /* 画像 */
+  .culture-img {
+    width: 100%;
+    align-self: flex-start;
+  }
+
+  .culture-img2 {
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  .culture-num {
+    font-size: 80px;
+    color: #2710d5;
+    margin-right: 20px;
+  }
+
+  .culture-en {
+    color: #2710d5;
+    font-weight: bold;
+    font-size: 24px;
+    display: block;
+  }
+
+  .culture-jp {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  #vision {
+    margin: 80px auto;
+  }
+
+  .vision-main {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .vision-box {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 30px;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 30;
+    }
+    span {
+      margin-right: 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 31;
+    }
+    h4 {
+      color: #2710d5;
+      font-size: 19px;
+      margin: 80px 0 0 0;
+    }
+    h4::first-letter {
+      font-size: 40px;
+    }
+
+    h5 {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    p {
+      margin: 10px 0 0 0;
+    }
+  }
+
+  #company {
+    margin: 80px auto;
+
+    table {
+      width: 100%;
+    }
+    th {
+      text-align: left;
+      padding: 20px;
+      border-bottom: solid 1px #2710d5;
+      width: 100px;
+    }
+    td {
+      padding: 30px;
+      border-bottom: solid 1px #ececec;
+    }
+
+    iframe {
+      width: 100%;
+      height: 368px;
+      margin-top: 40px;
+    }
+  }
+
+  .tableheader-first {
+    border-top: solid 1px #2710d5;
+  }
+
+  .cell-first {
+    border-top: solid 1px #ececec;
+  }
+
+  #contact {
+    margin: 80px auto;
+  }
+
+  .form-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+  }
+
+  .contact-heading {
+    width: 240px;
+    align-self: center;
+
+    label {
+      font-weight: bold;
+    }
+    span {
+      color: #ce2222;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+  }
+
+  .contact-textbox {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: solid 1px #707070;
+    background-color: #fafafa;
+    width: 400px;
+    height: 56px;
+  }
+
+  .contact-texarea {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: solid 1px #707070;
+    background-color: #fafafa;
+    width: 400px;
+    height: 200px;
+  }
+
+  details {
+    width: 700px;
+  }
+
+  .personal-info {
+    background-color: #fafafa;
+    padding: 20px;
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  footer {
+    background-color: #0d0d0d;
+    text-align: center;
+    padding: 80px 80px 30px 80px;
+  }
+
+  .footer-logo {
+    margin-bottom: 30px;
+  }
+
+  .footer-link {
+    margin-bottom: 50px;
+
+    > a {
+      text-decoration: none;
+      margin: 10px;
+
+      &:link {
+        color: white;
+      }
+
+      &:visited {
+        color: white;
+      }
+
+      &:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      &:active {
+        color: white;
+      }
+    }
+  }
+
+  .sns-footer {
+    text-align: left;
+    width: 100%;
+
+    a {
+      margin-right: 30px;
+    }
+  }
+  .copyright {
+    color: white;
+    float: right;
   }
 }
 
-.mission-right {
-  width: 50%;
-  margin: 20px;
-}
-.s2dgs {
-  margin-top: 50px;
-  width: 100%;
+// スマホ用スタイル
+@media screen and (max-width: 767px) {
+  body {
+    min-width: 375px;
+    margin: 0;
+  }
+
+  .nav-pc {
+    display: none;
+  }
+
+  .menu-sp {
+    float: right;
+    padding: 0;
+  }
+
+  // 表示切替
+  //  初期状態、レイアウトと非表示設定
+  #nav-sp {
+    background-color: #2710d5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 100;
+
+    > a {
+      display: block;
+
+      &:link {
+        color: white;
+      }
+
+      &:visited {
+        color: white;
+      }
+
+      &:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      &:active {
+        color: white;
+      }
+    }
+  }
+
+  .menu {
+    text-decoration: none;
+    display: block;
+    margin: 0 20px 0 20px;
+    height: 44px;
+    font-size: 16px;
+    background-image: url("images/arrow.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+  }
+
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .logo-sp {
+    margin: 80px 0 30px 20px;
+  }
+
+  .sns {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+
+    a {
+      margin-right: 30px;
+    }
+  }
+
+  .main-visual {
+    position: relative;
+    height: 470px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .main-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #2710d5;
+    color: white;
+    border-radius: 0 0 476px 0px;
+    text-align: center;
+    height: 280px;
+    width: 100%;
+    z-index: 11;
+
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin: 90px 0 0 0;
+    }
+  }
+
+  .main-img {
+    width: 100%;
+    border-radius: 476px 0 0 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+  h2::after {
+    content: url("images/line.png");
+    margin-left: 10px;
+  }
+
+  h3 {
+    font-size: 24px;
+    margin: 10px 0 0 0;
+  }
+
+  #mission {
+    margin: 20px;
+  }
+
+  .mission-photo,
+  .s2dgs {
+    width: 100%;
+  }
+
+  #product {
+    background-color: #fafafa;
+    padding-top: 10px;
+
+    h2 {
+      margin-left: 20px;
+    }
+  }
+
+  .product-left,
+  .product-right {
+    margin: 0 20px;
+  }
+
+  .product-left-element,
+  .product-right-element {
+    position: relative;
+    height: 540px;
+  }
+
+  .product-explain {
+    background-color: white;
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+
+    span {
+      color: #2710d5;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 0;
+    }
+
+    h3 {
+      margin: 10px 0;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+  .product-photo {
+    width: 100%;
+  }
+
+  .product-more img {
+    margin: 0 0 -42px 20px;
+  }
+
+  #aboutus {
+    margin: 80px 20px;
+  }
+
+  .culture-main {
+    display: flex;
+    flex-direction: column;
+
+    table {
+      width: 100%;
+      padding-right: 20px;
+      order: 2;
+    }
+  }
+
+  .culture-img {
+    width: 100%;
+    order: 1;
+  }
+
+  .culture-img2 {
+    width: 100%;
+  }
+
+  .culture-num {
+    font-size: 80px;
+    color: #2710d5;
+  }
+
+  .culture-en {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #2710d5;
+  }
+
+  .culture-jp {
+    display: block;
+  }
+
+  #vision {
+    margin: 80px 20px;
+  }
+
+  .vision-box {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 30px;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 30;
+    }
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 31;
+      margin-right: 20px;
+
+      h4 {
+        color: #2710d5;
+        font-size: 19px;
+        margin: 60px 0 0 0;
+      }
+
+      h5 {
+        font-size: 20px;
+        margin: 0;
+      }
+
+      p {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  #company {
+    margin: 0 20px;
+
+    h3 {
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    th {
+      text-align: left;
+      padding: 20px;
+      width: 50px;
+      border-bottom: solid 1px #2710d5;
+    }
+
+    td {
+      padding: 20px;
+      border-bottom: solid 1px #ececec;
+    }
+
+    iframe {
+      width: 100%;
+      height: 240px;
+      margin: 40px 0 0 0;
+    }
+  }
+
+  .tableheader-first {
+    text-align: left;
+    padding: 20px;
+    width: 50px;
+    border-top: solid 1px #2710d5;
+    border-bottom: solid 1px #2710d5;
+  }
+
+  .cell-first {
+    padding: 20px;
+    border-top: solid 1px #ececec;
+    border-bottom: solid 1px #ececec;
+  }
+
+  #contact {
+    margin: 80px 20px;
+
+    h3 {
+      margin-bottom: 30px;
+    }
+  }
+
+  .form-item {
+    margin-bottom: 20px;
+  }
+
+  .contact-heading {
+    margin-bottom: 20px;
+
+    label {
+      font-weight: bold;
+    }
+
+    span {
+      color: #ce2222;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+  }
+
+  .contact-textbox {
+    height: 56px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: solid 1px #707070;
+    background-color: #fafafa;
+    min-width: 300px;
+    width: 100px;
+  }
+
+  .contact-texarea {
+    height: 150px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: solid 1px #707070;
+    background-color: #fafafa;
+    min-width: 300px;
+    width: 100px;
+  }
+  .radiobutton {
+    margin-bottom: 20px;
+  }
+
+  .radiobutton + label::after {
+    content: "\A";
+    white-space: pre;
+  }
+
+  footer {
+    background-color: #0d0d0d;
+    padding: 30px 20px 50px 20px;
+  }
+
+  .footer-logo {
+    margin-bottom: 30px;
+  }
+
+  .footer-link {
+    margin-bottom: 50px;
+
+    a {
+      text-decoration: none;
+      margin: 0 20px 30px 0;
+      display: block;
+      background-image: url("images/arrow.png");
+      background-repeat: no-repeat;
+      background-position: right top;
+
+      &:link,
+      &:visited,
+      &:hover,
+      &:active {
+        color: white;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .sns-footer > a {
+    margin-right: 30px;
+  }
+
+  .copyright {
+    font-size: 12px;
+    display: block;
+    margin-top: 30px;
+    color: white;
+  }
 }
 
-.product {
-  background-color: #fafafa;
-  width: 100%;
-  margin: 80px 0;
-  padding: 10px 40px 0 40px;
-}
-.product-main {
-  margin-top: 40px;
-  display: flex;
+// missionページ PC
+
+@media screen and (min-width: 768px) {
+  #mission-main {
+    height: 496px;
+    width: 100%;
+    background-image: url(images/mission/mission-main.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+  }
+
+  .mission-title {
+    background-color: #2710d5;
+    width: 368px;
+    color: white;
+    height: 496px;
+    border-radius: 0 248px 248px 0;
+    position: relative;
+
+    h1 {
+      position: absolute;
+      top: 0;
+      left: 100px;
+      font-size: 80px;
+    }
+
+    span {
+      position: absolute;
+      top: 200px;
+      left: 100px;
+      font-size: 26px;
+    }
+  }
+
+  .mission-pannavi {
+    position: absolute;
+    top: 350px;
+    left: 100px;
+    font-size: 16px;
+  }
+
+  #mission-s2dgs {
+    width: 100%;
+    margin: 20px;
+  }
+
+  .mission-h2 {
+    color: #2710d5;
+    font-size: 50px;
+
+    margin-bottom: -10px;
+
+    &::after {
+      content: none;
+    }
+  }
+
+  #mission-5goals {
+    margin: 20px 20px 20px 0;
+    display: flex;
+
+    span {
+      color: #2710d5;
+      font-size: 48px;
+      margin: 0;
+    }
+
+    h3 {
+      font-size: 28px;
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .goals-left,
+  .goals-right {
+    flex-grow: 1;
+    margin: 20px;
+  }
+
+  .goals-right-item {
+    margin-bottom: 40px;
+  }
+
+  .fivegoals-image-left {
+    float: left;
+    margin: 20px;
+  }
+
+  .fivegoals-image-right {
+    float: right;
+    margin: 20px;
+  }
 }
 
-.product-left {
-  width: 50%;
-  margin-right: 20px;
-}
-.product-right {
-  width: 50%;
-  margin: 80px 0 0 20px;
+// missionページ SP
+@media screen and (max-width: 767px) {
+  #mission-main {
+    height: 256px;
+    width: 100%;
+    background-image: url(images/mission/mission-main.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-size: auto 208px;
+  }
+
+  .mission-title {
+    background-color: #2710d5;
+    width: 136px;
+    color: white;
+    height: 256px;
+    border-radius: 0 248px 248px 0;
+    position: relative;
+
+    h1 {
+      position: absolute;
+      top: 0;
+      left: 20px;
+      font-size: 40px;
+    }
+
+    span {
+      position: absolute;
+      top: 110px;
+      left: 20px;
+      font-size: 18px;
+    }
+  }
+
+  .mission-pannavi {
+    position: absolute;
+    top: 180px;
+    left: 20px;
+    font-size: 13px;
+  }
+
+  #mission-s2dgs {
+    margin: 20px;
+  }
+
+  .mission-h2 {
+    color: #2710d5;
+    font-size: 38px;
+
+    margin-bottom: -10px;
+
+    &::after {
+      content: none;
+    }
+  }
+
+  .s2dgs-image {
+    width: 100%;
+  }
+
+  #mission-5goals {
+    margin: 20px;
+
+    span {
+      color: #2710d5;
+      font-size: 48px;
+      margin: 0;
+    }
+
+    h3 {
+      font-size: 28px;
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .goals-left,
+  .goals-right {
+    margin-bottom: 40px;
+  }
+
+  .s2dgs-image {
+    width: 100%;
+  }
+
+  .fivegoals-image-left,
+  .fivegoals-image-right {
+    display: block;
+    margin: 20px auto;
+  }
 }
 
-.product-left-mantoman,
-.product-left-career {
-  position: relative;
-  height: 480px;
-  margin-right: 20px;
+// PRODUCT PC
+@media screen and (min-width: 768px) {
+  #product-main {
+    height: 496px;
+    width: 100%;
+    background-image: url(images/product/product-main.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+  }
+
+  .product-title {
+    background-color: #2710d5;
+    width: 368px;
+    color: white;
+    height: 496px;
+    border-radius: 0 248px 248px 0;
+    position: relative;
+
+    h1 {
+      position: absolute;
+      top: 0;
+      left: 100px;
+      font-size: 80px;
+    }
+
+    span {
+      position: absolute;
+      top: 200px;
+      left: 100px;
+      font-size: 26px;
+    }
+  }
+
+  .product-pannavi {
+    position: absolute;
+    top: 350px;
+    left: 100px;
+    font-size: 16px;
+  }
+
+  // item
+  .product-section1 {
+    position: relative;
+    margin: 20px;
+    height: 340px;
+
+    > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 450px;
+      margin: 0 40px 30px 0;
+      border-radius: 0 432px 0 0;
+    }
+
+    > div {
+      position: absolute;
+      top: 0;
+      left: 480px;
+    }
+  }
+
+  .product-section2 {
+    position: relative;
+    margin: 20px;
+    height: 340px;
+
+    > img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 450px;
+      margin: 0 0 30px 40px;
+      border-radius: 432px 0 0 0;
+    }
+
+    > div {
+      width: 500px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .product-item-main {
+    h2 {
+      color: #2710d5;
+      font-size: 24px;
+      margin: 0;
+    }
+
+    h3 {
+      font-size: 28px;
+      margin: 0;
+    }
+  }
 }
 
-.product-right-media,
-.product-right-b2b {
-  position: relative;
-  height: 480px;
-  margin-left: 20px;
-}
+// PRODUCT SP
+@media screen and (max-width: 767px) {
+  #product-main {
+    height: 256px;
+    width: 100%;
+    background-image: url(images/product/product-main.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-size: auto 208px;
+  }
 
-.product-photo {
-  width: 100%;
-}
+  .product-title {
+    background-color: #2710d5;
+    width: 136px;
+    color: white;
+    height: 256px;
+    border-radius: 0 248px 248px 0;
+    position: relative;
 
-.product-explain {
-  background-color: white;
-  position: absolute;
-  top: 0;
-  left: 280px;
-  margin: 0 40px;
-  padding: 20px;
+    h1 {
+      position: absolute;
+      top: 0;
+      left: 20px;
+      font-size: 40px;
+    }
+
+    span {
+      position: absolute;
+      top: 110px;
+      left: 20px;
+      font-size: 18px;
+    }
+  }
+
+  .product-pannavi {
+    position: absolute;
+    top: 180px;
+    left: 20px;
+    font-size: 13px;
+  }
+
+  // item
+  .product-section1 {
+    margin: 20px;
+
+    > img {
+      width: 100%;
+      border-radius: 0 300px 0 0;
+    }
+  }
+
+  .product-section2 {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+
+    > img {
+      order: 1;
+      width: 100%;
+      border-radius: 300px 0 0 0;
+    }
+
+    > div {
+      order: 2;
+    }
+  }
+
+  .product-item-main {
+    h2 {
+      color: #2710d5;
+      font-size: 24px;
+      margin: 0;
+    }
+
+    h3 {
+      font-size: 28px;
+      margin: 0;
+    }
+  }
 }
